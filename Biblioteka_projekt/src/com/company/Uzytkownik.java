@@ -7,6 +7,3 @@ public class Uzytkownik {
     private String terminWypozyczenia;
     private boolean czyZablokowany = false;
 }
-
-// zablokwoanie:
-//listauzytkownikow.get(i).setCzyZablokowany(true)

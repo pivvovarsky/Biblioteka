@@ -14,10 +14,11 @@ public class Main {
             wyswietlMenu();
             linia = input.nextLine();
 
-            if (linia.equals("0")) {
+            if (linia.equals("0")) // WYSWIETLANIE KSIAZEK
+            {
                 biblioteka.wyswietlListeKsiazek();
             }
-            else if(linia.equals("1"))
+            else if(linia.equals("1")) // DODAWANIE KSIAZEK
             {
                 String tytul, autor;
                 System.out.println("Podaj tytul ksiazki");
@@ -28,7 +29,7 @@ public class Main {
                 // dodanie
                 biblioteka.dodajKsiazke(new Ksiazka( autor, tytul));
             }
-            else if(linia.equals("2"))
+            else if(linia.equals("2")) // EDYCJA KSIAZKI
             {
                 String i, tytul, autor;
                 System.out.println("Podaj numer ksiazki do edytcji");
@@ -43,31 +44,28 @@ public class Main {
                 ksiazkaDoEdycji.setTytul(tytul);
                 ksiazkaDoEdycji.setAutor(autor);
             }
-            else if(linia.equals("3"))
+            else if(linia.equals("3")) // USUWANIE KSIAZKI
             {
 
             }
-            else if(linia.equals("4"))
+            else if(linia.equals("4")) // DODAJ NOWEGO UZYTKOWNIKA
             {
 
             }
-            else if(linia.equals("5"))
+            else if(linia.equals("5")) // EDYTUJ UZYTKOWNIKA
             {
 
             }
-            else if(linia.equals("6"))
+            else if(linia.equals("6")) // ZABLOKUJ UZYTKOWNIKA
+            {
+// zablokwoanie:
+//listauzytkownikow.get(i).setCzyZablokowany(true)
+            }
+            else if(linia.equals("7")) // WYPOZYCZ KSIAZKE
             {
 
             }
-            else if(linia.equals("7"))
-            {
-
-            }
-            else if(linia.equals("8"))
-            {
-
-            }
-            else if(linia.equals("9"))
+            else if(linia.equals("8")) // WYSWIETL UZYTKOWNIKOW Z ICH WYPOZYCZENIAMI I TERMINAMI
             {
 
             }
@@ -88,8 +86,8 @@ public class Main {
         System.out.println("4-Dodaj nowego uzytkownika");
         System.out.println("5-Edytuj uzytkownika");
         System.out.println("6-Zablokuj uzytkownika");
-        System.out.println("8-Wypozycz ksiazke");
-        System.out.println("9-Wyswietl baze uzytkownikow(Terminy wypozyczen)");
+        System.out.println("7-Wypozycz ksiazke");
+        System.out.println("8-Wyswietl baze uzytkownikow(Terminy wypozyczen)");
         System.out.println("q - Wyjdz z programu");
         System.out.println("-------------");
     }
