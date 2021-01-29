@@ -9,8 +9,6 @@ public class Ksiazka {
     public Ksiazka(String autor, String tytul) {
         this.autor = autor;
         this.tytul = tytul;
-        this.terminOddania = terminOddania;
-        this.uzytkownikWypozyczajacy = uzytkownikWypozyczajacy;
     }
 
     public String getAutor() {

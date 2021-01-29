@@ -46,26 +46,53 @@ public class Main {
             }
             else if(linia.equals("3")) // USUWANIE KSIAZKI
             {
+                String i;
+                System.out.println("Podaj numer ksiazki do usuniecia");
+                i = input.nextLine();
+                //usuwanie
+                biblioteka.usunKsiazke(Integer.parseInt(i));
+            }
+            else if(linia.equals("4")) // WYSWIETL BAZE UZYTKOWNIKOW
+            {
+                biblioteka.wyswietlListeUzytkownikow();
 
             }
-            else if(linia.equals("4")) // DODAJ NOWEGO UZYTKOWNIKA
+            else if(linia.equals("5")) // DODAJ NOWEGO UZYTKOWNIKA
             {
+                String imie, nazwisko;
+                System.out.println("Podaj imie uzytkownika");
+                imie = input.nextLine();
+                System.out.println("Podaj nazwisko uzytkownika");
+                nazwisko = input.nextLine();
+                biblioteka.dodajUzytkownika(new Uzytkownik( imie, nazwisko));
 
             }
-            else if(linia.equals("5")) // EDYTUJ UZYTKOWNIKA
+            else if(linia.equals("6")) // EDYTUJ UZYTKOWNIKA
             {
+                String i,imie,nazwisko;
+                System.out.println("Podaj numer uzytkownika do edycji");
+                i = input.nextLine();
+                System.out.println("Podaj imie uzytkownika");
+                imie = input.nextLine();
+                System.out.println("Podaj nazwisko uzytkownika");
+                nazwisko = input.nextLine();
+                /////EDYCJA UZYTKOWNIKA
+                Uzytkownik uzytkownikDoEdycji = biblioteka.getListaUzytkownikow().get(Integer.parseInt(i));
+                uzytkownikDoEdycji.setImie(imie);
+                uzytkownikDoEdycji.setNazwisko(nazwisko);
 
             }
-            else if(linia.equals("6")) // ZABLOKUJ UZYTKOWNIKA
+            else if(linia.equals("7")) // ZABLOKUJ UZYTKOWNIKA
             {
+                System.out.println("Podaj numer uzytkownika do zablokowania");
 // zablokwoanie:
 //listauzytkownikow.get(i).setCzyZablokowany(true)
             }
-            else if(linia.equals("7")) // WYPOZYCZ KSIAZKE
+            else if(linia.equals("8")) // WYPOZYCZ KSIAZKE
             {
 
             }
-            else if(linia.equals("8")) // WYSWIETL UZYTKOWNIKOW Z ICH WYPOZYCZENIAMI I TERMINAMI
+            else if(linia.equals("9")) // WYSWIETL UZYTKOWNIKOW Z ICH WYPOZYCZENIAMI I TERMINAMI
             {
 
             }
@@ -83,11 +110,12 @@ public class Main {
         System.out.println("1-Dodaj nowa ksiazke do biblioteki");
         System.out.println("2-Edytuj ksiazke z biblioteki");
         System.out.println("3-Usun ksiazke z biblioteki");
-        System.out.println("4-Dodaj nowego uzytkownika");
-        System.out.println("5-Edytuj uzytkownika");
-        System.out.println("6-Zablokuj uzytkownika");
-        System.out.println("7-Wypozycz ksiazke");
-        System.out.println("8-Wyswietl baze uzytkownikow(Terminy wypozyczen)");
+        System.out.println("4-Wyswietl baze uzytkownikow");
+        System.out.println("5-Dodaj nowego uzytkownika");
+        System.out.println("6-Edytuj uzytkownika");
+        System.out.println("7-Zablokuj uzytkownika");
+        System.out.println("8-Wypozycz ksiazke");
+        System.out.println("9-Wyswietl baze uzytkownikow(Terminy wypozyczen)");
         System.out.println("q - Wyjdz z programu");
         System.out.println("-------------");
     }
