@@ -84,7 +84,12 @@ public class Main {
             }
             else if(linia.equals("7")) // ZABLOKUJ UZYTKOWNIKA
             {
+                String i;
                 System.out.println("Podaj numer uzytkownika do zablokowania");
+                i = input.nextLine();
+                ///BLOKADA UZYTKOWNIKA
+                Uzytkownik uzytkownikDoBlokady = biblioteka.getListaUzytkownikow().get(Integer.parseInt(i));
+                uzytkownikDoBlokady.setZablokowany(true);
 // zablokwoanie:
 //listauzytkownikow.get(i).setCzyZablokowany(true)
             }

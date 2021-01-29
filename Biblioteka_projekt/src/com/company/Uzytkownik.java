@@ -9,6 +9,12 @@ public class Uzytkownik {
         this.nazwisko = nazwisko;
     }
 
+    public Uzytkownik(String imie, String nazwisko, boolean zablokowany) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.zablokowany = zablokowany;
+    }
+
     public String getImie() {
         return imie;
     }
@@ -38,6 +44,7 @@ public class Uzytkownik {
         return "{" +
                 "imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
+                ", zablokowany=" + zablokowany +
                 '}';
     }
 }
