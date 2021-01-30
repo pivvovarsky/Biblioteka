@@ -55,8 +55,8 @@ public class Biblioteka {
         }
     }
 
-    void usunUzytkownika(int idUzytkownika){
-        this.listaUzytkownikow.remove(idUzytkownika);
+    void usunUzytkownika(int i){
+        this.listaUzytkownikow.remove(i);
     }
 
     public void setListaUzytkownikow(List<Uzytkownik> listaUzytkownikow) {
