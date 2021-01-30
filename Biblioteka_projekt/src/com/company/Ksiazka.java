@@ -1,9 +1,11 @@
 package com.company;
 
+import java.time.LocalDate;
+
 public class Ksiazka {
     private String autor;
     private String tytul;
-    private String terminOddania;
+    private LocalDate terminOddania;
     private Uzytkownik uzytkownikWypozyczajacy;
 
     public Ksiazka(String autor, String tytul) {
@@ -27,11 +29,11 @@ public class Ksiazka {
         this.tytul = tytul;
     }
 
-    public String getTerminOddania() {
+    public LocalDate getTerminOddania() {
         return terminOddania;
     }
 
-    public void setTerminOddania(String terminOddania) {
+    public void setTerminOddania(LocalDate terminOddania) {
         this.terminOddania = terminOddania;
     }
 

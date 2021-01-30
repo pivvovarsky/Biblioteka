@@ -1,5 +1,6 @@
 package com.company;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -115,7 +116,25 @@ public class Main {
             }
             else if(linia.equals("9")) // WYPOZYCZ KSIAZKE
             {
+                String indexUzytkownika, indexKsiazki;
+                System.out.println("Podaj numer uzytkownika ktory wypozycza ksiazke");
+                indexUzytkownika = input.nextLine();
+                System.out.println("Podaj numer ksiazki do wypozyczenia");
+                indexKsiazki = input.nextLine();
 
+                try {
+                    Uzytkownik uzytkownikWypozyczajacy = biblioteka.getListaUzytkownikow().get(Integer.parseInt(indexUzytkownika));
+                    Ksiazka ksiazkaWypozyczana = biblioteka.getListaKsiazek().get(Integer.parseInt(indexKsiazki));
+
+                    ksiazkaWypozyczana.setUzytkownikWypozyczajacy(uzytkownikWypozyczajacy);
+                    ksiazkaWypozyczana.setTerminOddania(LocalDate.now().plusWeeks(1));
+                    /// testujemy gdy ksiazka po terminie
+                   //// ksiazkaWypozyczana.setTerminOddania(LocalDate.now().minusWeeks(1));
+                }
+                catch (IndexOutOfBoundsException ex)
+                {
+                    System.err.println("Indeks poza granicami bazy, proszę wybrać poprawną wartość");
+                }
             }
             else if(linia.equals("10")) // WYSWIETL UZYTKOWNIKOW Z ICH WYPOZYCZENIAMI I TERMINAMI
             {
@@ -123,6 +142,7 @@ public class Main {
             }
         } while (!linia.equals("q"));
 
+        //biblioteka.wyswietlListeKsiazekNieoddanych();
         System.out.println("Dziekuje dobranoc");
     }
 

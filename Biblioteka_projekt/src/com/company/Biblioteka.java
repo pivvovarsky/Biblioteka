@@ -1,4 +1,5 @@
 package com.company;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
@@ -40,6 +41,20 @@ public class Biblioteka {
             System.out.println("KSIĄŻKA " + i + ": " + listaKsiazek.get(i).toString());
         }
     }
+
+    void wyswietlListeKsiazekNieoddanych()
+    {
+        for (int i = 0; i < listaKsiazek.size(); i ++) {
+            // wieksze niz 0 -> terminOddania > dzis
+            // mniejsze niz 0 -> termin oddania < dzis
+            // 0 -> takie same daty
+            if(listaKsiazek.get(i).getTerminOddania().compareTo(LocalDate.now()) < 0)
+            {
+                System.out.println("KSIĄŻKA " + i + ": " + listaKsiazek.get(i).toString());
+            }
+        }
+    }
+
     ///METODY UZYTKOWNIK
     public void sortujUzytkownikow(){
         listaUzytkownikow.sort((uzytkownik1, uzytkownik2) -> uzytkownik1.getNazwisko().compareTo(uzytkownik2.getNazwisko()));
