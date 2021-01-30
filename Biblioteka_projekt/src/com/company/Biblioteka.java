@@ -63,9 +63,9 @@ public class Biblioteka {
         this.listaUzytkownikow = listaUzytkownikow;
     }
 
-    void edytujUzytkownika(int i, Uzytkownik uzytkownik){
-        this.listaUzytkownikow.set(i,uzytkownik);
+  ////  void edytujUzytkownika(int i, Uzytkownik uzytkownik){
+      ///  this.listaUzytkownikow.set(i,uzytkownik);
     }
 
 
-}
+
